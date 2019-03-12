@@ -36,7 +36,6 @@ body{
 
 .main-canvas{
 	background-image: url('assets/b4.jpg');
-	background-size: contain;
 	background-size: 100% 700px;
 	/*background-color: black;*/
 	padding-top: 50px;
