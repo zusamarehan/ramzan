@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	$('#days').roundSlider({
 		startAngle : 90,
-		readOnly: false,
+		readOnly: true,
 		'min': 0,
 		'max': 365,
 		sliderType: "min-range",
@@ -23,7 +23,6 @@ $(document).ready(function(){
 		'max': 24,
 		sliderType: "min-range",
     	handleShape: "round",
-    	handleShape: "round",
     	  tooltipFormat: function (e) {
   			return e.value+ ' Hours';
 		}
@@ -34,7 +33,6 @@ $(document).ready(function(){
 		'min': 0,
 		'max': 60,
 		sliderType: "min-range",
-    	handleShape: "round",
     	handleShape: "round",
     	  tooltipFormat: function (e) {
   			return e.value+ ' Minutes';
@@ -72,21 +70,19 @@ $(document).ready(function(){
 
 		hours = (b.hours() - a.hours()) < 0 ? ((((b.hours() - a.hours())*-1) - 24)*-1) : (b.hours() - a.hours());
 		minutes = (b.minutes() - a.minutes()) < 0 ? ((((b.minutes() - a.minutes())*-1) - 60)*-1) : (b.minutes() - a.minutes());
-		seconds = a.seconds() - b.seconds();
-		$('#ramzan-day-remaining').text(days);	
-		$('#ramzan-time-remaining').text(hours +' : '+ minutes+' : '+ (seconds - 60)*-1);	
+		seconds = (a.seconds() - b.seconds() - 60) * -1;
+		// $('#ramzan-day-remaining').text(days);	
+		// $('#ramzan-time-remaining').text(hours +' : '+ minutes+' : '+ (seconds - 60)*-1);	
 		
 
 
 		daysObj.option("value", days);
 		hoursIbj.option("value", hours);
 		minutesObj.option("value", minutes);
-		secondsObj.option("value", (seconds - 60)*-1);
+		secondsObj.option("value", seconds);
 		
 
 
 	}, 1000);
-
-		
 
 });
