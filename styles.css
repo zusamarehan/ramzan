@@ -68,3 +68,7 @@ body{
    color: white;
    text-align: center;
 }
+
+#planner-text{
+	font-weight: 600;
+}
